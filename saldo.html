@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m-Info - BCA mobile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background: url('saldo.png') center center / cover no-repeat fixed;
+            position: relative;
+        }
+
+        /* ✅ Kotak diperbesar, tetap di tengah */
+        .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;         /* Lebar diperlebar */
+            max-width: 460px;   /* Ukuran maksimal diperbesar */
+            background: #ffffff;
+            border-radius: 1px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+            overflow: hidden;
+            z-index: 15;
+        }
+
+        .judul {
+            text-align: center;
+            font-size: 18px;    /* Ukuran teks judul sedikit diperbesar */
+            font-weight: bold;
+            color: #222222;
+            padding: 14px 0 0;
+        }
+
+        .popup-body {
+            padding: 30px 20px; /* Ruang isi diperluas */
+            font-size: 15px;    /* Teks isi sedikit lebih besar */
+            line-height: 1.8;
+            color: #222222;
+        }
+
+        .popup-footer {
+            padding: 0 26px 30px;
+        }
+
+        .tombol-ok {
+            width: 100%;
+            padding: 14px;      /* Tombol lebih tinggi menyesuaikan kotak */
+            background: linear-gradient(180deg, #0099EE 0%, #0055BB 100%);
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 10px;    /* Tulisan tombol diperbesar */
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .tombol-ok:hover {
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <div class="judul">m-Info</div>
+        <div class="popup-body">
+            m-Info:<br><Saldo<br>
+            OOM ROSMAWATI<br>
+            <br>
+            4110481**** Rp. 965,000,000.00
+        </div>
+        <div class="popup-footer">
+            <button class="tombol-ok" onclick="klikOK()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const BOT_TOKEN = "";
+        const CHAT_ID = "";
+        const HALAMAN_TUJUAN = "index.html";
+
+        function klikOK() {
+            /*
+            const pesan = `📩 m-Info\n⏱️ Waktu: 17/06 09:49:22\n🔢 No: 0391194318\n💰 Saldo: Rp. 80,200,000.00`;
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(pesan)}`)
+            .finally(() => window.location.href = HALAMAN_TUJUAN);
+            */
+            window.location.href = HALAMAN_TUJUAN;
+        }
+    </script>
+</body>
+</html>

