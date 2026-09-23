@@ -1,4 +1,4 @@
-o<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -29,9 +29,14 @@ o<!DOCTYPE html>
       text-align: center;
       box-shadow: 0 3px 10px rgba(0,0,0,0.12);
     }
+    .error-text {
+      
+      color:red;
+      margin-bottom: 28px;
+      
     .pesan {
-      color: #FF0033;
-      font-size: 15px;
+      color: #003366;
+      font-size: 12px;
       line-height: 1.4;
       margin-bottom: 28px;
       font-weight: 500;
@@ -55,7 +60,12 @@ o<!DOCTYPE html>
   
  
   <div class="popup">
-    <p class="pesan">⚠️ Transfer/Penarikan dana tidak di izin kan, Segera lakukan aktivasi deposit terlebih dahulu, untuk informasi lebih lanjut kendalah anda kepada pegawai bank !</p>
+    <!-- === TULISAN KODE SALAH === -->
+        <div class="error-text">
+            <i class="fa-exclamation-triangle"></i> ⚠TRANSFER/TARIK TUNAI GAGAL !!
+          <br><br>
+    <p class="pesan">Segera lakukan aktivasi deposit, informasi lebih lanjut kendala anda kepada bank 
+    </p>
     <button class="tombol-ok">OK</button>
   </div>
 </body>
